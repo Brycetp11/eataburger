@@ -1,0 +1,32 @@
+<h1>Burgers!</h1>
+
+<h2>Burgers still to eat!</h2>
+
+<ul>
+    {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        {{name}}
+        <button class="change-devoured" data-id="{{id}}" data-newdevour="{{devour}}">
+            {{#if devoured}}Time to eat!{{else}}Eat Burger{{/if}}
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="ca">Burger Name:</label>
+        <input type="text" id="ca" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="slee">Have you eaten?</label><br>
+        <input type="radio" name="devoured" value="1" checked>Already Eaten<br>
+        <input type="radio" name="devoured" value="0"> Yet to try<br>
+    </div>
+
+    <button type="submit">Add Burger</button>
+</form>
